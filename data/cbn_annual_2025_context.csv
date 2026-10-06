@@ -1,0 +1,5 @@
+metric,channel,year_2024,year_2025,pct_change,source,source_date
+Transaction value (NGN trillion),ATM,29.12,89.12,208.4,CBN 2025 Annual Report,2026-08
+Transaction volume (billions),POS,NA,15.66,19.78,CBN 2025 Annual Report,2026-08
+Transaction volume (millions),USSD,NA,669.55,20.89,CBN 2025 Annual Report,2026-08
+Total e-payment value (NGN trillion),All Channels,3458.77,4360.33,26.07,CBN 2025 Annual Report,2026-08

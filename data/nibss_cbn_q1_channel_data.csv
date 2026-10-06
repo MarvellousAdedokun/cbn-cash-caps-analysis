@@ -1,0 +1,15 @@
+channel,period,volume_transactions,value_ngn_trillion,source,source_date
+POS,Q1 2025,3640000000,70.98,CBN Q1'26 Quarterly Statistical Bulletin (via Vanguard/Babajide Komolafe),2026-08-25
+POS,Q1 2026,2920000000,59.33,CBN Q1'26 Quarterly Statistical Bulletin (via Vanguard/Babajide Komolafe),2026-08-25
+ATM,Q1 2025,411420000,15.97,CBN Q1'26 Quarterly Statistical Bulletin (via Vanguard/Babajide Komolafe),2026-08-25
+ATM,Q1 2026,438590000,26.30,CBN Q1'26 Quarterly Statistical Bulletin (via Vanguard/Babajide Komolafe),2026-08-25
+Mobile Pay,Q1 2025,2080000000,104.07,CBN Q1'26 Quarterly Statistical Bulletin (via Vanguard/Babajide Komolafe),2026-08-25
+Mobile Pay,Q1 2026,2670000000,112.12,CBN Q1'26 Quarterly Statistical Bulletin (via Vanguard/Babajide Komolafe),2026-08-25
+NIP,Q1 2025,2220000000,284.99,CBN Q1'26 Quarterly Statistical Bulletin (via Vanguard/Babajide Komolafe),2026-08-25
+NIP,Q1 2026,1820000000,320.76,CBN Q1'26 Quarterly Statistical Bulletin (via Vanguard/Babajide Komolafe),2026-08-25
+Web Pay,Q1 2025,5500000000,542.99,CBN Q1'26 Quarterly Statistical Bulletin (via Vanguard/Babajide Komolafe),2026-08-25
+Web Pay,Q1 2026,4720000000,529.82,CBN Q1'26 Quarterly Statistical Bulletin (via Vanguard/Babajide Komolafe),2026-08-25
+Cheque,Q1 2025,3570000,5.15,CBN Q1'26 Quarterly Statistical Bulletin (via Vanguard/Babajide Komolafe),2026-08-25
+Cheque,Q1 2026,3040000,5.00,CBN Q1'26 Quarterly Statistical Bulletin (via Vanguard/Babajide Komolafe),2026-08-25
+All Channels Total,Q1 2025,13840000000,1024.00,CBN Q1'26 Quarterly Statistical Bulletin (via Vanguard/Babajide Komolafe),2026-08-25
+All Channels Total,Q1 2026,12570000000,1053.00,CBN Q1'26 Quarterly Statistical Bulletin (via Vanguard/Babajide Komolafe),2026-08-25
