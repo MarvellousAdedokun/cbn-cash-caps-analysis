@@ -40,4 +40,18 @@ CREATE OR REPLACE VIEW v_channel_group AS
         v_channel_wide
     GROUP BY channel_group;
 
+ SELECT channel vol_25, vol_26, ROUND(100 * (vol_26 / vol_25 - 1), 2) AS vol_chg_pct, val_25, val_26, ROUND(100 * (val_26 / val_25 - 1), 2) AS val_chg_pct FROM v_channel_wide ORDER BY val_chg_pct DESC;
  
+SELECT w.channel,
+  ROUND(100 * w.vol_25 / t.v25, 2) AS vol_share_25,
+  ROUND(100 * w.vol_26 / t.v26, 2) AS vol_share_26,
+  ROUND(100 * w.vol_26 / t.v26 - 100 * w.vol_25 / t.v25, 2) AS vol_share_shift_pp,
+  ROUND(100 * w.val_25 / t.t25, 2) AS val_share_25,
+  ROUND(100 * w.val_26 / t.t26, 2) AS val_share_26,
+  ROUND(100 * w.val_26 / t.t26 - 100 * w.val_25 / t.t25, 2) AS val_share_shift_pp
+FROM v_channel_wide w
+CROSS JOIN (SELECT SUM(vol_25) v25, SUM(vol_26) v26,
+                   SUM(val_25) t25, SUM(val_26) t26
+            FROM v_channel_wide) t
+ORDER BY val_share_shift_pp;
+
