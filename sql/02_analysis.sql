@@ -55,3 +55,14 @@ CROSS JOIN (SELECT SUM(vol_25) v25, SUM(vol_26) v26,
             FROM v_channel_wide) t
 ORDER BY val_share_shift_pp;
 
+SELECT g.channel_group,
+	ROUND(100 * g.vol_25 / t.v25, 2) AS vol_share_25,
+    ROUND(100 * g.vol_26 / t.v26, 2) AS vol_share_26, 
+    ROUND(100 * g.val_25 / t.t25, 2) AS val_share_25,
+    ROUND(100 * g.val_26 / t.t26, 2) AS val_share_26
+FROM v_channel_group g
+CROSS JOIN (SELECT SUM(vol_25) v25, SUM(vol_26) v26,
+					SUM(val_25) t25, SUM(val_26) t26
+                    FROM v_channel_group) t
+ORDER BY g.channel_group;
+
