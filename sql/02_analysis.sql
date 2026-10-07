@@ -66,3 +66,9 @@ CROSS JOIN (SELECT SUM(vol_25) v25, SUM(vol_26) v26,
                     FROM v_channel_group) t
 ORDER BY g.channel_group;
 
+SELECT channel,
+	ROUND(val_25 * 1000000000000 / vol_25, 0) AS avg_naira_per_txn_25,
+    ROUND(val_26 * 1000000000000 / vol_26, 0) AS avg_naira_per_txn_26,
+    ROUND(100 * ((val_26 / vol_26) / (val_25 / vol_25) -1), 1) AS avg_size_chg_pct
+FROM v_channel_wide
+ORDER BY avg_size_chg_pct DESC;
