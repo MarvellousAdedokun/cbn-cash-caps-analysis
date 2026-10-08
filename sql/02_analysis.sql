@@ -66,9 +66,21 @@ CROSS JOIN (SELECT SUM(vol_25) v25, SUM(vol_26) v26,
                     FROM v_channel_group) t
 ORDER BY g.channel_group;
 
-SELECT channel,
-	ROUND(val_25 * 1000000000000 / vol_25, 0) AS avg_naira_per_txn_25,
+SELECT 
+    channel,
+    ROUND(val_25 * 1000000000000 / vol_25, 0) AS avg_naira_per_txn_25,
     ROUND(val_26 * 1000000000000 / vol_26, 0) AS avg_naira_per_txn_26,
-    ROUND(100 * ((val_26 / vol_26) / (val_25 / vol_25) -1), 1) AS avg_size_chg_pct
-FROM v_channel_wide
+    ROUND(100 * ((val_26 / vol_26) / (val_25 / vol_25) - 1),
+            1) AS avg_size_chg_pct
+FROM
+    v_channel_wide
 ORDER BY avg_size_chg_pct DESC;
+
+SELECT 
+    c.cico_share_pct AS assumed_cico_share_of_pos_txns_pct,
+    ROUND(w.vol_25 * c.cico_share_pct / 100 / 1000000,
+            0) AS cico_share_q1_25_millions,
+    ROUND(100 * (w.vol_25 - w.vol_26) / (w.vol_25 * c.cico_share_pct / 100),
+            1) AS worst_case_cico_fall_pct
+FROM v_channel_wide w
+JOIN (SELECT 30 AS cico_share_pct UNION ALL SELECT 40 UNION ALL SELECT 50 UNION ALL SELECT 60 UNION ALL SELECT 70) c WHERE w.channel = 'POS' ORDER BY c.cico_share_pct;
