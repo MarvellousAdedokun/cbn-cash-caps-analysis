@@ -102,3 +102,10 @@ SELECT channel,
 FROM v_channel_wide;
 
 SELECT * FROM v_cico_scenario;
+
+CREATE OR REPLACE VIEW v_avg_ticket AS
+SELECT channel,
+  ROUND(val_25 * 1000000000000 / vol_25, 0) AS avg_naira_25,
+  ROUND(val_26 * 1000000000000 / vol_26, 0) AS avg_naira_26,
+  ROUND(100 * ((val_26 * 1000000000000 / vol_26) / (val_25 * 1000000000000 / vol_25) - 1), 1) AS avg_size_chg_pct
+FROM v_channel_wide;
